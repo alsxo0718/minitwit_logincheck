@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}login_check{% endblock %}
+{% block body %}
+<h2>login check</h2>
+{% if error %}
+    <div class=error><strong>Error:</strong> {{ error }}</div>
+{% endif %}
+
+{% endblock %}
