@@ -3,7 +3,8 @@
 {% block body %}
 <h2>follow list</h2>
  <ul class=follower>
-       {% if follower %}
+
+     {% if follower %}
         {% for follower in follower %}
         <li>
                 <strong><a href="{{ url_for('user_timeline', username=follower.username) }}">{{ follower.username }}</a></strong>
@@ -13,7 +14,7 @@
         </li>
      {% else %}
         you followed no one yet.
-     {% end if %}
+     {% endif %}
     </ul>
 
 {% endblock %}
