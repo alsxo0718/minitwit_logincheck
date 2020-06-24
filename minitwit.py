@@ -226,6 +226,13 @@ def user_timeline(username):
     [profile_user['user_id'], PER_PAGE]), followed=followed,
     profile_user=profile_user)
 
+@app.route('/follow_list')
+def follow_list():
+    return render_template('follow_list.html', follower=query_db('''
+        select user.username, user.user_id from follower, user where follower.who_id = ? and follower.whom_id = user.user_id '''
+            ,[session['user_id']]))
+
+
 if __name__ == '__main__':
     init_db()
     app.run()

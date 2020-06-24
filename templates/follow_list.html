@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}follow_list{% endblock %}
+{% block body %}
+<h2>follow list</h2>
+ <ul class=follower>
+        {% for follower in follower %}
+        <li>
+                <strong><a href="{{ url_for('user_timeline', username=follower.username) }}">{{ follower.username }}</a></strong>
+                - user id : {{ follower.user_id }}
+        </li>
+            {% endfor %}
+        </li>
+    </ul>
+
+{% endblock %}
